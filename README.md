@@ -1,88 +1,97 @@
-# Employee Shift Calendar
+# Employee Shift Calendar Application
 
-A comprehensive web application for managing employee shifts, holiday requests, and work schedules.
+A React-based employee shift management application that allows employees to manage their schedules and administrators to oversee shift assignments and approvals.
 
 ## Features
 
-- **User Authentication**: Registration, login, and role-based access control
-- **Shift Management**: Create, view, and manage shift schedules
-- **Holiday Requests**: Submit and approve time-off requests
-- **Reporting**: Generate weekly and monthly reports for working hours
-- **Admin Dashboard**: User management, shift approval, and system configuration
+- **Authentication**: Login, registration, and password reset
+- **Shift Calendar**: View and manage shifts with month, week, and day views
+- **Shift Management**: Create, edit, and request shifts
+- **Role-Based Access**: Different features for employees and admins
+- **Reports**: Visualize shift data with charts and reports
+- **User Management**: Admin tools for managing users
 
-## Technology Stack
+## Technical Stack
 
-- **Frontend**: React.js with TypeScript, Material UI
-- **Backend**: Node.js with Express
-- **Database**: MongoDB
-- **Authentication**: JWT (JSON Web Tokens)
+- **Frontend**: React 18+ with TypeScript
+- **Routing**: React Router v6
+- **State Management**: Redux Toolkit with RTK Query for API calls
+- **UI Components**: Material UI
+- **Forms**: React Hook Form with Yup validation
+- **Calendar**: FullCalendar
+- **Data Visualization**: Recharts for reports
+- **Styling**: Styled-components
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14.x or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/your-username/shift-calendar.git
+cd shift-calendar
+```
+
+2. Install dependencies:
+```
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+```
+npm start
+# or
+yarn start
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
-shift/
-├── client/               # Frontend React application
-│   ├── src/
-│   │   ├── components/   # Reusable UI components
-│   │   ├── pages/        # Page components for routing
-│   │   ├── contexts/     # React context providers
-│   │   ├── hooks/        # Custom React hooks
-│   │   ├── services/     # API service functions
-│   │   ├── utils/        # Utility functions
-│   │   └── assets/       # Static assets (images, fonts, etc.)
-│   ├── public/           # Public static files
-│   └── package.json      # Frontend dependencies
-│
-├── server/               # Backend Node.js application
-│   ├── controllers/      # Request handlers
-│   ├── models/           # Database models
-│   ├── routes/           # API route definitions
-│   ├── middleware/       # Custom middleware
-│   ├── config/           # Configuration files
-│   ├── utils/            # Utility functions
-│   └── server.js         # Entry point
-│
-└── README.md             # Project documentation
+src/
+├── assets/                 # Static assets and images
+├── components/             # Reusable UI components
+│   ├── common/             # Generic components (Button, Card, etc.)
+│   ├── calendar/           # Calendar-related components
+│   ├── forms/              # Form components
+│   ├── layout/             # Layout components
+│   └── reports/            # Report visualization components
+├── features/               # Feature-based modules
+│   ├── auth/               # Authentication related components
+│   ├── shifts/             # Shift management components
+│   ├── users/              # User management components
+│   └── reports/            # Reporting components
+├── hooks/                  # Custom React hooks
+├── store/                  # Redux store configuration
+│   ├── slices/             # Redux slices
+│   └── api/                # RTK Query API definitions
+├── types/                  # TypeScript type definitions
+├── utils/                  # Utility functions
+├── pages/                  # Page components
+├── routes/                 # Application routes
+└── App.tsx                 # Root component
 ```
 
-## Setup Instructions
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- MongoDB
-
-### Installation
-1. Clone the repository
-2. Install frontend dependencies:
-   ```
-   cd client
-   npm install
-   ```
-3. Install backend dependencies:
-   ```
-   cd server
-   npm install
-   ```
-
-### Running the Application
-1. Start the backend server:
-   ```
-   cd server
-   npm run dev
-   ```
-2. Start the frontend development server:
-   ```
-   cd client
-   npm start
-   ```
-
 ## Shift Types
+
+The application supports the following shift types:
 - **"M" (Morning shift)**: 06:48 AM to 03:00 PM
 - **"A" (Afternoon shift)**: 02:48 PM to 11:00 PM
 - **"N" (Night shift)**: 10:48 PM to 07:00 AM
 - **"D" (Day shift)**: 09:00 AM to 06:00 PM
 - **"PL" (Paid leave)**: Employee is on paid leave
 - **"SL" (Sick Leave)**: Employee is on sick leave
-- **"C" (Compensation)**: Employee is taking compensation
-- **"NH" (National holiday)**: Employee is off for a national holiday 
+- **"C" (Compensation)**: Taking compensation for overtime
+- **"NH" (National holiday)**: Off for a national holiday
+
+## License
+
+[MIT](LICENSE) 
